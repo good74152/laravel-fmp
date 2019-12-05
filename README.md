@@ -9,16 +9,26 @@
 
 
 如何開始
-git clone git@gitlab.com:Firestar/micro-academic-credit-website.git
-cd micro-academic-credit-website.git
+git clone git@gitlab.com:Firestar/fmp.git
+
+cd fmp
+
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
+
 開編輯器 更改.env 建資料庫
+
 php artisan migrate
+
 php artisan db:seed
+
 php artisan serve
+
 git checkout "YourBranch"
+
 開始寫程式吧~~~
 
 正確的git流程

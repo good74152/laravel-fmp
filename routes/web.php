@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('index');
 });
 
@@ -21,7 +20,3 @@ Route::get('/demo', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-=======
-    return view('welcome');
-});
->>>>>>> 3f85b0d9bd65e39399dfdc1bdb7b906fbfa65dc7

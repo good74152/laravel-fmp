@@ -36,18 +36,42 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">會員登入</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">遺失物查詢</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">管理者登入</a>
-          </li>
+          @guest
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">會員登入</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">遺失物查詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/admin') }}">管理者登入</a>
+            </li>
+          @else
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">{{ Auth::user()->name }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">登出
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">遺失物查詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/admin') }}">管理者登入</a>
+            </li>
+          @endguest
         </ul>
       </div>
     </div>

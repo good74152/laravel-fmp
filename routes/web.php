@@ -20,3 +20,6 @@ Route::get('/demo', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//搜尋遺失物公開資料記錄
+Route::get('/search_record', 'SearchRecord@index')->name('home');

@@ -40,7 +40,7 @@
               <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">會員登入</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">遺失物查詢</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>

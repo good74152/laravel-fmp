@@ -13,7 +13,9 @@
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
-    return view('index');
+  return response()->json([
+  'stuff' => phpinfo()
+ ]);
 });
 
 //搜尋遺失物公開資料記錄

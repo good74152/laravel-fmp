@@ -2,6 +2,10 @@
 @section('content')
 <!-- About Section -->
 
+<<<<<<< HEAD
+=======
+<!-- Masthead -->
+>>>>>>> d89cb519d121555523b290b1e9cd203599c22949
 <header class="masthead">
   <div class="container h-100">
     <div class="row h-100 align-items-center justify-content-center text-center">
@@ -17,6 +21,10 @@
   </div>
 </header>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d89cb519d121555523b290b1e9cd203599c22949
 <section class="page-section bg-primary" id="about">
   <div class="container">
     <div class="row justify-content-center">
@@ -32,7 +40,7 @@
 <!-- Services Section -->
 <section class="page-section" id="services">
   <div class="container">
-    <h2 class="text-center mt-0">At Your Service</h2>
+    <h2 class="text-center mt-0">功能介紹</h2>
     <hr class="divider my-4">
     <div class="row">
       <div class="col-lg-3 col-md-6 text-center">

@@ -5,78 +5,23 @@
 <section class="page-section" id="services">
   <div class="container">
     <h2 class="text-center mt-0">警察機關失物招領網路公告查詢</h2>
+    <h6 class="text-center mt-0">#僅提供自警察機關依民法第803條第2項規定完成失物招領程序時起6個月內之網路失物招領之數位批次資料</h6>
+
     <hr class="divider my-4">
       <div class="row">
         <div class="col-md-12" id="search">
-          <form class="form-horizontal" action="{{ url('achievement/search') }}" method="post">
+          <form class="form-horizontal" action="{{ url('search_record/search') }}" method="post">
             {{ csrf_field() }}
+
             <div class="form-group">
-              <label class="control-label col-md-4">受理單位</label>
-              <div class = "row" >
-                <div class="form-group col-md-4">
-                <select type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
-                  <option value="">請選擇...</option>
-                  <option value="AW000">臺北市政府警察局</option>
-                  <option value="AD000">新北市政府警察局</option>
-                  <option value="AE000">桃園市政府警察局</option>
-                  <option value="AB000">臺中市政府警察局</option>
-                  <option value="AC000">臺南市政府警察局</option>
-                  <option value="AV000">高雄市政府警察局</option>
-                  <option value="A2200">刑事警察局</option>
-                  <option value="A2300">航空警察局</option>
-                  <option value="A2400">國道公路警察局</option>
-                  <option value="A2N00">鐵路警察局</option>
-                  <option value="A2900">保一總隊</option>
-                  <option value="A2A00">保二總隊</option>
-                  <option value="A2B00">保三總隊</option>
-                  <option value="A2C00">保四總隊</option>
-                  <option value="A2D00">保五總隊</option>
-                  <option value="A2E00">保六總隊</option>
-                  <option value="A2F00">保七總隊</option>
-                  <option value="A2H00">基隆港警總隊</option>
-                  <option value="A2I00">臺中港警總隊</option>
-                  <option value="A2J00">高雄港警總隊</option>
-                  <option value="A2K00">花蓮港警總隊</option>
-                  <option value="A2O00">警察通訊所</option>
-                  <option value="A2U00">民防管制所</option>
-                  <option value="A2M00">警察廣播電臺</option>
-                  <option value="A2L00">警察機械修理廠</option>
-                  <option value="A2800">臺灣警專學校</option>
-                  <option value="BA000">基隆市警察局</option>
-                  <option value="BF000">新竹市警察局</option>
-                  <option value="BM000">嘉義市政府警察局</option>
-                  <option value="BG000">新竹縣政府警察局</option>
-                  <option value="BH000">苗栗縣警察局</option>
-                  <option value="BJ000">彰化縣警察局</option>
-                  <option value="BK000">南投縣政府警察局</option>
-                  <option value="BL000">雲林縣警察局</option>
-                  <option value="BN000">嘉義縣警察局</option>
-                  <option value="BQ000">屏東縣政府警察局</option>
-                  <option value="BT000">宜蘭縣政府警察局</option>
-                  <option value="BS000">花蓮縣警察局</option>
-                  <option value="BR000">臺東縣警察局</option>
-                  <option value="BU000">澎湖縣政府警察局</option>
-                  <option value="BY000">金門縣警察局</option>
-                  <option value="BZ000">連江縣警察局</option>
-                </select>
-                </select>
-                </div>
-                <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
-                </div>
-                <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-4">拾得日期起迄</label>
+              <label class="control-label col-md-5" required>拾得日期起</label>
+              <label class="control-label col-md-5" required>拾得日期迄</label>
               <div class = "row" >
                 <div class="form-group col-md-5">
-                <input type="text" class="form-control glyphicon glyphicon-calendar" id="" placeholder="ex.106-1" name="term">
-              </div><span>～</span>
+                <input type="text" class="form-control glyphicon glyphicon-calendar" placeholder="20190101" name="date1">
+              </div><span></span>
                 <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
+                <input type="text" class="form-control" placeholder="20191212" name="date2">
                 </div>
               </div>
             </div>
@@ -85,7 +30,7 @@
               <label class="control-label col-md-5">遺失物品</label>
               <div class = "row" >
                 <div class="form-group col-md-5">
-                <select type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
+                <select type="text" class="form-control" placeholder="ex.106-1" name="place">
                   <option value="">請選擇...</option>
                   <option>臺北市</option>
                   <option>新北市</option>
@@ -112,19 +57,45 @@
                 </select>
                 </div>
                 <div class="form-group col-md-7">
-                <input type="text" class="form-control" id="" placeholder="ex.106-1" name="term">
+                <input type="text" class="form-control" id="" placeholder="錢包..." name="name">
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-offset-2 col-md-12">
               <center>
-                <button type="submit" class="btn btn-primary" onclick="openResult()">查詢</button>
+                <button type="submit" class="btn btn-primary">查詢</button>
               </center>
               </div>
             </div>
           </form>
         </div>
+
+        <!--回傳結果-->
+    		@if ($search_other = Session::get('search_other'))
+    			<div class="alert alert-block" style="background-color:#262626">
+    				<button type="button" class="close" data-dismiss="alert" style="color:#e65c00;">×</button>
+    				<center><h3 style="color:#e74c3c">搜尋結果</h3></center>
+    				@if($search_other->isEmpty())
+    					<strong style="color:#e74c3c">查無結果...</strong>
+    				@else
+    					<tbody style="background-color:">
+    						<table class="table table-hover" >
+    							<tbody style="background-color:">
+    								@foreach ($search_other as $search_others)
+    									<a href="#" class="list-group-item">
+    										<h3><b></b>{{ $search_others->OP_PU_PLACE }}</h3>
+    										<h5>{{$search_others->OP_AN_CONTENT}}</h5>
+    									</a>
+    								@endforeach
+    							</tbody>
+    						</table>
+    					</tbody>
+    				@endif
+    			</div>
+    		@endif
+
+
     </div>
   </div>
       <!--<div class="col-lg-3 col-md-6 text-center">

@@ -10,15 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/', 'HomeController@index')->name('home');
+/*
 Route::get('/', function () {
   return response()->json([
   'stuff' => phpinfo()
  ]);
-});
+});*/
 
 //搜尋遺失物公開資料記錄
-Route::get('/search_record', 'SearchRecord@index')->name('home');
+Route::get('/search_record', 'SearchRecordController@index')->name('home');
+Route::post('/search_record/search', 'SearchRecordController@search');
 
 Auth::routes();

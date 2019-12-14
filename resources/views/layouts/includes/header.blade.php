@@ -29,7 +29,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{ url('/home') }}"  style="color: black;">首頁</a>
+      <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}"  style="color: black;">首頁</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -62,7 +62,7 @@
               </form>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">遺失物查詢</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>

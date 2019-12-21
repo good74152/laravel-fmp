@@ -15,11 +15,16 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', function () {
   return response()->json([
   'stuff' => phpinfo()
- ]);
+]);
 });*/
 
 //搜尋遺失物公開資料記錄
 Route::get('/search_record', 'SearchRecordController@index')->name('home');
 Route::post('/search_record/search', 'SearchRecordController@search');
+
+Route::get('/bulletin', 'PostMissingDataController@index')->name('bulletin.index');
+
+Route::get('/userpost', 'UserPostController@index')->name('userpost.index');
+Route::post('/userpost/store', 'UserPostController@store')->name('userpost.store');
 
 Auth::routes();

@@ -21,6 +21,17 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="{{asset ('app-assets/css/creative.min.css')}}" rel="stylesheet">
+  
+  <!-- Laravel Mix css -->
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
+
+  <!-- Submit Website Form css -->
+  <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.14567" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jotfor.ms/css/printForm.css?3.3.14567" type="text/css" media="print" rel="stylesheet" />
+  <link href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.14567" type="text/css" rel="stylesheet" />
+  <link href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1" type="text/css" rel="stylesheet" />
+
+
 
 </head>
 
@@ -43,7 +54,7 @@
               <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/bulletin') }}">懸賞頁面</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ url('/admin') }}">管理者登入</a>
@@ -51,6 +62,9 @@
           @else
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">{{ Auth::user()->name }}</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{ url('/userpost') }}">發布懸賞</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
@@ -65,7 +79,7 @@
               <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">懸賞頁面</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/bulletin') }}">懸賞頁面</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ url('/admin') }}">管理者登入</a>

@@ -1,6 +1,7 @@
 @extends('layouts.includes.app')
 @section('content')
 
+
 <section class="page-section" id="portfolio">
 <div class="container" style=" width: 100%; padding-top: 0px;">
     <h1 class="text-center">懸賞公告</h1>
@@ -23,20 +24,32 @@
                 <th style="text-align: center;">
                     <button id="nameSortButton" type="submit" onclick="sortTable(3)" style="border-radius: 100px; border: none; background-color: transparent;">公告主題</button>
                 </th>
+            </tr>
         </table>
     </div>
     <div class="TableContent">
         <table class="table" id="content" style="table-layout: fixed; text-align: center" >
             @foreach($post_missing_datas as $post_missing_data)
-            <td>{{$post_missing_data->id}}</td>
-            <td>{{$post_missing_data->created_at}}</td>
-            <td>{{$post_missing_data->user_name}}</td>
-            <td>{{$post_missing_data->title}}</td>
-        </tr>
+            <!--點擊就可進入公告詳細頁-->
+            <tr>
+                
+                <td>{{$post_missing_data->id}}</td>
+                <td>{{$post_missing_data->created_at}}</td>
+                <td>{{$post_missing_data->user_name}}</td>
+                <td>
+                    <a href="bulletin/{{ $post_missing_data->id }}">{{$post_missing_data->title}}</a>
+                </td>
+
+            </tr>
         @endforeach
         </table>
     </div>
 </div>
 </section>
-
+<script type="text/javascript">
+    $(document).on("click",".tableTR",function(){
+        var targetID = $(this).data("targetid");
+        window.location.assign("{{ asset('/bulletin') }}"+"/"+targetID);
+    });
+</script>
 @endsection

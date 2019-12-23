@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\PostMissingData;
 use App\Comment;
+use App\PostMissingDataController;
+use App\UserController;
 use Illuminate\Http\Request;
+use App\Http\Controller\Auth;
 
-class PostMissingDataController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +17,7 @@ class PostMissingDataController extends Controller
      */
     public function index()
     {
-        $post_missing_datas = PostMissingData::all();
-        foreach ($post_missing_datas as $post)
-        {
-            $post->user_name = User::find($post->user_id)->name;
-        }
-        return view('bulletin', compact('post_missing_datas'));
+        //
     }
 
     /**
@@ -42,32 +38,33 @@ class PostMissingDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment          = new Comment;
+        $comment->user_id = $request->user()->id;
+        $comment->post_id = $request->post_missing_data()->id;
+        $comment->comment = $request->comment;
+        $cart->save();
+
+        return redirect('/bulletin/{post_missing_data}');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\PostMissingData  $postMissingData
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(PostMissingData $post_missing_data, Comment  $comment) /* 將model傳入 */
+    public function show(Comment $comment)
     {
-        $comment = Comment::all();
-        foreach ($comment as $post)
-        {
-            $post->user_name = User::find($post->user_id)->name;
-        }
-        return view('showpost', compact('post_missing_data'), compact('comment')); /*回傳showpost頁面*/
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\PostMissingData  $postMissingData
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(PostMissingData $postMissingData)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -76,10 +73,10 @@ class PostMissingDataController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PostMissingData  $postMissingData
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PostMissingData $postMissingData)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -87,10 +84,10 @@ class PostMissingDataController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\PostMissingData  $postMissingData
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PostMissingData $postMissingData)
+    public function destroy(Comment $comment)
     {
         //
     }

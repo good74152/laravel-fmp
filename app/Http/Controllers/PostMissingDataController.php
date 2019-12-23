@@ -56,9 +56,10 @@ class PostMissingDataController extends Controller
         $comment = Comment::all();
         foreach ($comment as $post)
         {
-            $post->user_name = User::find($post->user_id)->name;
+            $post->user_name = User::find($post->user_id)->name; /* 抓每個user_name */
         }
-        return view('showpost', compact('post_missing_data'), compact('comment')); /*回傳showpost頁面*/
+
+        return view('showpost', compact('post_missing_data'), compact('comment'));  /*回傳showpost頁面*/
     }
 
     /**

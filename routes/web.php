@@ -29,7 +29,7 @@ Route::get('/userpost', 'UserPostController@index')->name('userpost.index');
 Route::post('/userpost/store', 'UserPostController@store')->name('userpost.store');
 
 
-Route::get('/bulletin/{post_missing_data}', 'PostMissingDataController@show')->name('showpost'); //建立公告詳情頁
+Route::get('/bulletin/{post_missing_data}', 'PostMissingDataController@show')->name('showpost'); //顯示公告詳情頁
 
 Route::post('/bulletin/{post_missing_data}/store', 'CommentController@store')->name('comment.store');//儲存留言
 

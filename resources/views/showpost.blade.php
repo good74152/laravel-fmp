@@ -241,7 +241,7 @@
             
                             <div style="margin-left:156px" class="form-buttons-wrapper ">
             
-                                <button type="submit" class="form-submit-button" post_id="{{ $post_missing_data->id }}">
+                                <button type="submit" class="form-submit-button">
             
                                     確認送出
             

@@ -41,11 +41,13 @@ class CommentController extends Controller
     {
         $comment = new Comment;
         $comment->user_id = $request->user()->id;
-        $comment->post_id = $request->post_id;
+        $comment->post_id = $request->post_missing_data()->id;
         $comment->comment = $request->comment;
         $comment->save();
         
-        return redirect('/bulletin/{post_missing_data}');
+        return redirect('/bulletin/{post_missing_data}'); 
+
+        echo($request);
     }
 
     /**

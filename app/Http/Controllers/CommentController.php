@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\PostMissingData;
 use App\PostMissingDataController;
 use App\UserController;
 use Illuminate\Http\Request;
@@ -38,11 +39,11 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $comment          = new Comment;
+        $comment = new Comment;
         $comment->user_id = $request->user()->id;
-        $comment->post_id = $request->post_missing_data()->id;
+        $comment->post_id = $request->post_id;
         $comment->comment = $request->comment;
-        $cart->save();
+        $comment->save();
         
         return redirect('/bulletin/{post_missing_data}');
     }

@@ -15,6 +15,7 @@ class CreatePostMissingDataTable extends Migration
     {
         Schema::create('post_missing_data', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->text('description');

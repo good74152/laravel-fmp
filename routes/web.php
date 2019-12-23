@@ -24,7 +24,7 @@ Route::post('/search_record/search', 'SearchRecordController@search');
 
 Route::get('/bulletin', 'PostMissingDataController@index')->name('bulletin.index');
 
-Route::get('/userpost', 'UserPostController@index')->name('userpost.index');
+Route::get('/userpost', 'UserPostController@index')->name('userpost.index')->middleware('auth');
 Route::post('/userpost/store', 'UserPostController@store')->name('userpost.store');
 
 Auth::routes();

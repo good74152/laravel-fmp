@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>遺失物招領平台</title>
+  <title>@yield('title') 遺失物招領平台</title> <!--頁籤標題顯示出公告主題 -->
 
   <!-- Font Awesome Icons -->
   <link href = "{{asset ('app-assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">

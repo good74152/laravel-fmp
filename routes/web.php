@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'HomeController@index')->name('home');
+Route::pattern('post_missing_data', '[0-9]+'); //限制傳入id為0-9數字
 /*
 Route::get('/', function () {
   return response()->json([
@@ -26,5 +27,10 @@ Route::get('/bulletin', 'PostMissingDataController@index')->name('bulletin.index
 
 Route::get('/userpost', 'UserPostController@index')->name('userpost.index');
 Route::post('/userpost/store', 'UserPostController@store')->name('userpost.store');
+
+
+Route::get('/bulletin/{post_missing_data}', 'PostMissingDataController@show')->name('showpost'); //建立公告詳情頁
+
+Route::post('/bulletin/{post_missing_data}/store', 'CommentController@store')->name('comment.store');
 
 Auth::routes();

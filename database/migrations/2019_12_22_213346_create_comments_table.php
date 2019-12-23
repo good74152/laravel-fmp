@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostMissingDataTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePostMissingDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_missing_data', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id');             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('title');
-            $table->text('description');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('post_missing_data')->onDelete('cascade');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePostMissingDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_missing_data');
+        Schema::dropIfExists('comments');
     }
 }

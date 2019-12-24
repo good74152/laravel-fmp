@@ -13,7 +13,7 @@ class MissingData extends Migration
      */
     public function up()
     {
-      Schema::create('missingdatas', function (Blueprint $table) {
+      Schema::create('missing_data', function (Blueprint $table) {
           $table->increments('id');
           $table->string('OP_AC_UNIT_NM1')->nullable();
           $table->string('OP_AC_UNIT_NM2')->nullable();

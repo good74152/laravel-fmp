@@ -19,12 +19,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
+<body >
+    <div id="app" style="background-image: url('http://218.16.125.44:81/img/20180801/131775936662383709.jpg');">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    首頁
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" >
             @yield('content')
         </main>
     </div>

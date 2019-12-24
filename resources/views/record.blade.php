@@ -70,22 +70,24 @@
             </div>
           </form>
         </div>
-
+    </div>
         <!--回傳結果-->
     		@if ($search_other = Session::get('search_other'))
-    			<div class="alert alert-block" style="background-color:#262626">
+        <div class="center">
+          <div class="alert alert-block" style="background-color:#262626">
     				<button type="button" class="close" data-dismiss="alert" style="color:#e65c00;">×</button>
     				<center><h3 style="color:#e74c3c">搜尋結果</h3></center>
     				@if($search_other->isEmpty())
-    					<strong style="color:#e74c3c">查無結果...</strong>
+    					<center><strong  style="color:#e74c3c">&emsp;&emsp;查無結果...&emsp;&emsp;</strong></center>
     				@else
     					<tbody style="background-color:">
     						<table class="table table-hover" >
     							<tbody style="background-color:">
     								@foreach ($search_other as $search_others)
     									<a href="#" class="list-group-item">
-    										<h3><b></b>{{ $search_others->OP_PU_PLACE }}</h3>
-    										<h5>{{$search_others->OP_AN_CONTENT}}</h5>
+                        <h5><b>單位：</b>{{ $search_others->OP_AC_UNIT_NM3 }}</h5>
+    										<h5><b>位置：</b>{{ $search_others->OP_PU_PLACE }}</h5>
+    										<h5><b>內容：</b>{{$search_others->OP_AN_CONTENT}}</h5>
     									</a>
     								@endforeach
     							</tbody>
@@ -93,10 +95,11 @@
     					</tbody>
     				@endif
     			</div>
+        </div>
     		@endif
 
 
-    </div>
+
   </div>
       <!--<div class="col-lg-3 col-md-6 text-center">
         <div class="mt-5">

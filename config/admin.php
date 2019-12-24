@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => '遺失物招領平台-後台管理',
+    'name' => '遺失物招領後台登入',
 
     /*
     |--------------------------------------------------------------------------
@@ -400,7 +400,7 @@ return [
 
             //Set to false if you want to disable this extension
             'enable' => true,
-    
+
             // Editor configuration
             'config' => [
                 'lang'   => 'zh-TW',

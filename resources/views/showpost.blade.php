@@ -90,12 +90,15 @@
             
                 <!--點擊就可進入公告詳細頁-->
                 <tr>
-                    
+                    @if($comment->post_id == $post_missing_data->id) <!-- 只顯示此公告的留言 -->
+
                     <td><h5 class="mb-4" style= "color:orange">{{$comment->user_name}}</h5></td>
                     
                     <td><h5 class="mb-4" style= "color:orange">{{$comment->created_at}}</h5></td>
                     
                     <td><h5 class="mb-4" style= "color:orange; overflow:auto">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
+
+                    @endif
     
                 </tr>
                 
@@ -195,12 +198,16 @@
                     <!--點擊就可進入公告詳細頁-->
                     <tr>
                         
+                        @if($comment->post_id == $post_missing_data->id) <!-- 只顯示此公告的留言 -->
+
                         <td><h5 class="mb-4" style= "color:orange">{{$comment->user_name}}</h5></td>
                         
                         <td><h5 class="mb-4" style= "color:orange">{{$comment->created_at}}</h5></td>
                         
                         <td><h5 class="mb-4" style= "color:orange; overflow:auto">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
-        
+                        
+                        @endif
+
                     </tr>
                     
                     @endforeach

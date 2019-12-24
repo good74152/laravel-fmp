@@ -11,7 +11,7 @@
                 <!-- 編號 -->
                 <th style="text-align: center;">
                     <button id="idSortButton" type="button" onclick="sortTable(0)" style="border-radius: 100px; border: none; background-color: transparent;">公告編號</button>
-                </th>  
+                </th>
                 <!-- 日期 -->
                 <th style="text-align: center;">
                     <button id="dateSortButton" type="button" onclick="sortTable(1)" style="border-radius: 100px; border: none; background-color: transparent;">發布時間</button>
@@ -31,13 +31,13 @@
         <table class="table" id="content" style="table-layout: fixed; text-align: center" >
             @foreach($post_missing_datas as $post_missing_data)
             <!--點擊就可進入公告詳細頁-->
-            <tr>
-                
+            <tr class="hrefLabel abc" data-targetid="{{ $post_missing_data->id }}">
+
                 <td>{{$post_missing_data->id}}</td>
                 <td>{{$post_missing_data->created_at}}</td>
                 <td>{{$post_missing_data->user_name}}</td>
                 <td>
-                    <label class="hrefLabel" data-targetid="{{ $post_missing_data->id }}" style="color:blue">{{ $post_missing_data->title }}</label>
+                    <label >{{ $post_missing_data->title }}</label>
                 </td>
 
             </tr>
@@ -52,4 +52,12 @@
         window.location.assign("{{ asset('/bulletin/show') }}"+"/"+targetID);
     });
 </script>
+<style>
+.abc:hover {
+  transform: scale(1.02);
+}
+
+tr:nth-child(even) {background: #CCC};
+tr:nth-child(odd) {background: #FFF};
+</style>
 @endsection

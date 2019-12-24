@@ -21,5 +21,7 @@
     "Description": "公告內容",
     "User id":"使用者編號",
     "Created at": "建立時間",
-    "Updated at": "更新時間"
+    "Updated at": "更新時間",
+    "Post id": "公告編號",
+    "Comment": "留言"
 }

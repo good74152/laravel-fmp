@@ -37,7 +37,7 @@
                 <td>{{$post_missing_data->created_at}}</td>
                 <td>{{$post_missing_data->user_name}}</td>
                 <td>
-                    <a href="bulletin/{{ $post_missing_data->id }}">{{$post_missing_data->title}}</a>
+                    <label class="hrefLabel" data-targetid="{{ $post_missing_data->id }}" style="color:blue">{{ $post_missing_data->title }}</label>
                 </td>
 
             </tr>
@@ -47,9 +47,9 @@
 </div>
 </section>
 <script type="text/javascript">
-    $(document).on("click",".tableTR",function(){
+    $(document).on("click",".hrefLabel",function(){
         var targetID = $(this).data("targetid");
-        window.location.assign("{{ asset('/bulletin') }}"+"/"+targetID);
+        window.location.assign("{{ asset('/bulletin/show') }}"+"/"+targetID);
     });
 </script>
 @endsection

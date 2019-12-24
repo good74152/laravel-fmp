@@ -31,7 +31,7 @@
           2.1拾得遺失物招領於公告後6個月內，可上網認領或攜帶國民身分證、本人印章至發文單位認領。<br>
           2.2拾得人領回公告於公告後3個月內，需攜帶國民身分證、本人印章至發文單位認領。<br>
           2.3如有冒領情形，自負法律責任。</h5>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">遺失物查詢!</a>
+        <a class="btn  btn-xl sr-button" href="{{ url('/search_record') }}" style="background-color: #fff">遺失物查詢!</a>
       </div>
     </div>
   </div>

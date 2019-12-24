@@ -6,6 +6,7 @@ use App\User;
 use App\PostMissingData;
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostMissingDataController extends Controller
 {
@@ -59,7 +60,8 @@ class PostMissingDataController extends Controller
             $post->user_name = User::find($post->user_id)->name; /* 抓每個user_name */
         }
 
-        return view('showpost', compact('post_missing_data'), compact('comment'));  /*回傳showpost頁面*/
+        //return view('showpost', compact('post_missing_data'), compact('comment'));  /*回傳showpost頁面*/
+        return view('showpost',['post_missing_data'=>$post_missing_data, 'comment'=>$comment]);
     }
 
     /**

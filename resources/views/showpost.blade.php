@@ -95,7 +95,7 @@
                     
                     <td><h5 class="mb-4" style= "color:orange">{{$comment->created_at}}</h5></td>
                     
-                    <td><h5 class="mb-4" style= "color:orange">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
+                    <td><h5 class="mb-4" style= "color:orange; overflow:auto">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
     
                 </tr>
                 
@@ -199,7 +199,7 @@
                         
                         <td><h5 class="mb-4" style= "color:orange">{{$comment->created_at}}</h5></td>
                         
-                        <td><h5 class="mb-4" style= "color:orange">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
+                        <td><h5 class="mb-4" style= "color:orange; overflow:auto">{{$comment->comment}}</h5></td> <!-- 不確定抓進來的留言屬於這個公告 -->
         
                     </tr>
                     
@@ -215,7 +215,7 @@
         
             <div class="container text-center">
 
-                <form method="POST" action="{{ route('comment.store') }}">    
+                <form method="POST" action="{{ asset('/bulletin/store/'.$post_missing_data->id) }}">    
             
                     @csrf
         

@@ -7,7 +7,7 @@ use App\PostMissingData;
 use App\PostMissingDataController;
 use App\UserController;
 use Illuminate\Http\Request;
-use App\Http\Controller\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -37,15 +37,15 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, PostMissingData $post_missing_data)
     {
         $comment = new Comment;
-        $comment->user_id = $request->user()->id;
-        $comment->post_id = $request->post_missing_data()->id;
+        $comment->user_id = Auth::user()->id;
+        $comment->post_id = $post_missing_data->id;
         $comment->comment = $request->comment;
         $comment->save();
         
-        return redirect('/bulletin/{post_missing_data}'); 
+        return redirect('/bulletin/show/'.$post_missing_data->id); 
 
         echo($request);
     }

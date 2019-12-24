@@ -16,8 +16,6 @@
 <!-- Custom scripts for this template -->
 <script src="{{asset ('app-assets/js/creative.min.js')}}"></script>
 
-<!--Jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </body>
 

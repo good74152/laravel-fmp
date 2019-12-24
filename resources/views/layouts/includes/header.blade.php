@@ -31,6 +31,8 @@
   <link href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.14567" type="text/css" rel="stylesheet" />
   <link href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1" type="text/css" rel="stylesheet" />
 
+  <!--Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
 </head>

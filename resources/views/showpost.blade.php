@@ -7,10 +7,13 @@
 
         <div class="container">
             <div class="row">
-                <h2 class="col-md-6" style="border-left: solid 6px #f4623a">主題：{{$post_missing_data->title}}</h2>
-                <h2 class="col-md-6" style="border-left: solid 6px #f4623a">內容：{!! $post_missing_data->description !!}</h2>
+                <h2 class="col-md-12" style="border-left: solid 6px #f4623a">主題：{{$post_missing_data->title}}</h2>
             </div>
-            <hr style="border:solid 0px;border-bottom: solid 2px #ffa189">
+            <hr>
+            <div class="row">
+                <h3 class="col-md-12" style="border-left: solid 6px #f4623a">內容：{!! $post_missing_data->description !!}</h3>
+            </div>
+            <hr>
             {{-- <h4 class="text-center mt-4">所有留言</h4> --}}
                 {{-- <table class="table">
                     <thead>
@@ -107,10 +110,13 @@
         @else <!-- 會員看到的視圖 -->
             <div class="container">
                 <div class="row">
-                    <h2 class="col-md-6" style="border-left: solid 6px #f4623a">主題：{{$post_missing_data->title}}</h2>
-                    <h2 class="col-md-6" style="border-left: solid 6px #f4623a">內容：{!! $post_missing_data->description !!}</h2>
+                    <h2 class="col-md-12" style="border-left: solid 6px #f4623a">主題：{{$post_missing_data->title}}</h2>
                 </div>
-                <hr style="border:solid 0px;border-bottom: solid 2px #ffa189">
+                <hr>
+                <div class="row">
+                    <h3 class="col-md-12" style="border-left: solid 6px #f4623a">內容：{!! $post_missing_data->description !!}</h3>
+                </div>
+                <hr>
                 {{-- <h4 class="text-center mt-4">所有留言</h4> --}}
                 <div class="TableContent">
 
@@ -295,4 +301,4 @@
 
 </section>
 @endsection
-@section('nav_member', 'active')
+@section('nav_bullutin', 'active')

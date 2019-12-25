@@ -1,5 +1,6 @@
 @extends('layouts.includes.app')
 @section('content')
+
 <!-- About Section -->
 
 <!-- Masthead -->
@@ -40,3 +41,4 @@
 </section>
 
 @endsection
+@section('nav_home', 'active')

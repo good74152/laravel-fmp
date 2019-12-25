@@ -295,3 +295,4 @@
 
 </section>
 @endsection
+@section('nav_member', 'active')

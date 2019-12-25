@@ -94,3 +94,4 @@
     </div>
 
 @endsection
+@section('nav_post_lost', 'active')

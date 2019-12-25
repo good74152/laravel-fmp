@@ -61,3 +61,5 @@ tr:nth-child(even) {background: #CCC};
 tr:nth-child(odd) {background: #FFF};
 </style>
 @endsection
+
+@section('nav_bullutin', 'active')

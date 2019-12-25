@@ -75,7 +75,7 @@
             </li>
           @else
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger active" href="#">{{ Auth::user()->name }} 你好</a>
+              <a class="nav-link js-scroll-trigger active" href="{{ url('/userprofile/'.Auth::user()->id) }}">{{ Auth::user()->name }} 你好</a>
             </li>
             <li class="nav-item">
             <a class="nav-link js-scroll-trigger @yield('nav_post_lost')" href="{{ url('/userpost') }}">發布懸賞</a>

@@ -30,6 +30,19 @@ class PostMissingDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function search(Request $request)
+     {
+         $title=$request->title;
+         $post_missing_datas = PostMissingData::where('title','like','%'.$title.'%')->get();
+         foreach ($post_missing_datas as $post)
+         {
+             $post->user_name = User::find($post->user_id)->name;
+         }
+
+         return view('bulletin', compact('post_missing_datas'));
+     }
+
     public function create()
     {
         //

@@ -5,6 +5,12 @@
 <section class="page-section" id="portfolio">
 <div class="container" style=" width: 100%; padding-top: 0px;">
     <h2 class="text-center mt-0">懸賞公告</h2>
+    <form class="form-horizontal" action="{{ route('bulletin.search')}}" method="post">
+      {{ csrf_field() }}
+      {{ method_field('post') }}
+    <input type="text" class="form-control" id="" placeholder="" name="title">
+    <button type="submit" class="btn btn-primary">搜尋標題!</button>
+    </form>
     <hr class="divider my-4">
     <div class="TableTop">
         <table class="table" id="TitleTable" style="text-align: center; table-layout: fixed;">

@@ -141,3 +141,4 @@
 
 </section>
 @endsection
+@section('nav_lostsearch', 'active')

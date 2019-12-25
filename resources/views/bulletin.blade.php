@@ -4,7 +4,8 @@
 
 <section class="page-section" id="portfolio">
 <div class="container" style=" width: 100%; padding-top: 0px;">
-    <h1 class="text-center">懸賞公告</h1>
+    <h2 class="text-center mt-0">懸賞公告</h2>
+    <hr class="divider my-4">
     <div class="TableTop">
         <table class="table" id="TitleTable" style="text-align: center; table-layout: fixed;">
             <tr>
@@ -55,9 +56,12 @@
 <style>
 .abc:hover {
   transform: scale(1.02);
+  cursor: pointer
 }
 
 tr:nth-child(even) {background: #CCC};
 tr:nth-child(odd) {background: #FFF};
 </style>
 @endsection
+
+@section('nav_bullutin', 'active')

@@ -87,3 +87,6 @@
     <br>
 </div>
 @endsection
+@section('nav_member', 'active')
+@section('nav_member_register', 'active')
+

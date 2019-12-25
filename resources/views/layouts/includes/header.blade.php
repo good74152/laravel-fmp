@@ -40,9 +40,9 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"  id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 "  id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}"  style="color:#212529;font-size:18px">首頁</a>
+      <a class="navbar-brand js-scroll-trigger @yield('nav_home')" href="{{ url('/') }}"  style="font-size:18px">首頁</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,12 +50,12 @@
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           @guest
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle @yield('nav_member')" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 會員
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="nav-link js-scroll-trigger" href="{{ url('/register') }}">會員註冊</a>
-                <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">會員登入</a>
+                <a class="nav-link js-scroll-trigger @yield('nav_member_register') " href="{{ url('/register') }}">會員註冊</a>
+                <a class="nav-link js-scroll-trigger  @yield('nav_member_login')" href="{{ url('/login') }}">會員登入</a>
               </div>
             </li>
             {{-- <li class="nav-item">
@@ -65,26 +65,26 @@
               <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">會員登入</a>
             </li> --}}
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
+              <a class="nav-link js-scroll-trigger @yield('nav_lostsearch') " href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/bulletin') }}">懸賞頁面</a>
+              <a class="nav-link js-scroll-trigger @yield('nav_bullutin') " href="{{ url('/bulletin') }}">懸賞頁面</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/admin') }}">管理者登入</a>
+              <a class="nav-link js-scroll-trigger  " href="{{ url('/admin') }}">管理者登入</a>
             </li>
           @else
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">{{ Auth::user()->name }} 你好</a>
+              <a class="nav-link js-scroll-trigger active" href="#">{{ Auth::user()->name }} 你好</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ url('/userpost') }}">發布懸賞</a>
+            <a class="nav-link js-scroll-trigger @yield('nav_post_lost')" href="{{ url('/userpost') }}">發布懸賞</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/search_record') }}">遺失物查詢</a>
+              <a class="nav-link js-scroll-trigger @yield('nav_lostsearch')" href="{{ url('/search_record') }}">遺失物查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/bulletin') }}">懸賞頁面</a>
+              <a class="nav-link js-scroll-trigger @yield('nav_bullutin') " href="{{ url('/bulletin') }}">懸賞頁面</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"

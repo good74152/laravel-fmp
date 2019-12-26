@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostMissingData extends Model
 {
-    protected $fillable = ['user_id', 'title', 'description',];
+    protected $fillable = ['user_id', 'title', 'description', 'location',];
 
     public function user()
     {

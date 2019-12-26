@@ -27,9 +27,13 @@
                 <th style="text-align: center;">
                     <button id="classSortButton" type="submit" onclick="sortTable(2)" style="border-radius: 100px; border: none; background-color: transparent;">發布者</button>
                 </th>
+                <!-- 地點 -->
+                <th style="text-align: center;">
+                    <button id="nameSortButton" type="submit" onclick="sortTable(3)" style="border-radius: 100px; border: none; background-color: transparent;">物品地點</button>
+                </th>
                 <!-- 公告主題 -->
                 <th style="text-align: center;">
-                    <button id="nameSortButton" type="submit" onclick="sortTable(3)" style="border-radius: 100px; border: none; background-color: transparent;">公告主題</button>
+                    <button id="nameSortButton" type="submit" onclick="sortTable(4)" style="border-radius: 100px; border: none; background-color: transparent;">公告主題</button>
                 </th>
             </tr>
         </table>
@@ -43,6 +47,7 @@
                 <td>{{$post_missing_data->id}}</td>
                 <td>{{$post_missing_data->created_at}}</td>
                 <td>{{$post_missing_data->user_name}}</td>
+                <td>{{$post_missing_data->location}}</td>
                 <td>
                     <label >{{ $post_missing_data->title }}</label>
                 </td>

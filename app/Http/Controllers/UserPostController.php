@@ -41,6 +41,7 @@ class UserPostController extends Controller
         $post_missing_data->user_id = $request->user()->id;
         $post_missing_data->title = $request->title;
         $post_missing_data->description = $request->description;
+        $post_missing_data->location = $request->location;
         $post_missing_data->save();
 
         return redirect('userpost');

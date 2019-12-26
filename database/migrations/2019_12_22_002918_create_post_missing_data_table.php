@@ -19,6 +19,7 @@ class CreatePostMissingDataTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->string('location');
             $table->timestamps();
         });
     }

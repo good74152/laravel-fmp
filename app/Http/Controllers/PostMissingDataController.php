@@ -106,8 +106,14 @@ class PostMissingDataController extends Controller
      * @param  \App\PostMissingData  $postMissingData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PostMissingData $postMissingData)
+    public function destroy($post_missing_data) //只傳入$id
     {
-        //
+        $post_missing_data = PostMissingData::find($post_missing_data);
+        
+        $post_missing_data -> delete();
+
+        $user = Auth::user()->id; 
+
+        return redirect('userprofile/'.$user); //回傳原本頁面
     }
 }

@@ -55,6 +55,7 @@
   </div>
 </section>
 
+
 <section class="page-section" id="contact">
   
   <div class="container">
@@ -79,32 +80,30 @@
       
       @if ($post_missing_data->user_id == $user->id)
       
-      <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">懸賞主題 : {{ $post_missing_data->title }}
+      <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">編號 : {{ $post_missing_data->id }} 發布時間 : {{ $post_missing_data->created_at }} 懸賞主題 : {{ $post_missing_data->title }}  
       
-        <button type="submit" class="btn btn-primary">修改</button>
+        <button type="submit" class="btn btn-primary">修改這個懸賞!</button>
 
-        <button type="submit" class="btn btn-primary">
-          
-          <input type="hidden" value="DELETE"/>
-          
-          刪除
+        <form method="POST" action="{{ asset('/userprofile/delete/'.$post_missing_data->id) }}">
 
-        </button>
+          {{ csrf_field() }}
+
+          {{ method_field('DELETE') }}
+
+          <button type="submit" class="btn btn-primary">刪除這個懸賞!</button>
+      
+        </form>
 
       </div>
-      
-        @endif
-      
-        @endforeach
 
-        </div>
-  
-      </div>
-    
+      @endif
+      
+      @endforeach
+
     </div>
   
   </div>
-
+    
 </section>
 
 <section class="page-section" id="contact">

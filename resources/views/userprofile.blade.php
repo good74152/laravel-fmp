@@ -16,14 +16,14 @@
         <div class="mt-5">
           <i class="fas fa-4x fa-gem text-primary mb-4"></i>
           <h3 class="h4 mb-2">姓名</h3>
-          <p class="text-muted mb-0">{{ $user->name }}</p>
+          <p class="text-muted mb-0" style="font-size:24px;">{{ $user->name }}</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="mt-5">
           <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
           <h3 class="h4 mb-2">Email</h3>
-          <p class="text-muted mb-0">{{ $user->email }}</p>
+          <p class="text-muted mb-0"  style="font-size:24px;">123@gmail.com</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
@@ -59,8 +59,36 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="mt-0">訂閱內容：</h2>
+        <h2 class="mt-0">今天在資料庫中有可能是你的遺失物的項目：</h2>
+        <h5 class="mt-0">根據你的訂閱關鍵字 城市：{{ $user->subscribe_city }}、物品名稱：{{ $user->subscribe_thingname }}</h5>
         <hr class="divider my-4">
+
+        <div class="center">
+          <div class="alert alert-block" style="background-color:#262626">
+            <button type="button" class="close" data-dismiss="alert" style="color:#e65c00;">×</button>
+            <center><h3 style="color:#e74c3c">搜尋結果</h3></center>
+            @if($search_other->isEmpty())
+              <center><strong  style="color:#e74c3c">&emsp;&emsp;今天沒有類似的遺失物被送到警察局&emsp;&emsp;</strong></center>
+            @else
+              <tbody style="background-color:">
+                <table class="table table-hover" >
+                  <tbody style="background-color:">
+                    @foreach ($search_other as $search_others)
+                      <a href="#" class="list-group-item">
+                        <h6><b>時間：</b>{{$search_others->OP_PU_DATE}}</h6>
+                        <h6><b>單位：</b>{{ $search_others->OP_AC_UNIT_NM3 }}</h6>
+                        <h6><b>位置：</b>{{ $search_others->OP_PU_PLACE }}</h6>
+                        <h6><b>內容：</b>{{$search_others->OP_AN_CONTENT}}</h6>
+                      </a>
+                    @endforeach
+                  </tbody>
+                </table>
+              </tbody>
+            @endif
+          </div>
+        </div>
+
+
         <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
       </div>
     </div>

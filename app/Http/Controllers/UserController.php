@@ -17,10 +17,37 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-    $user = Auth::user();
-    
-    return view('userprofile', with(['user' => $user]));
+      $user = Auth::user();
+      $city=$user->subscribe_city;
+      $thingname=$user->subscribe_thingname;
+      $nowdate = date("Ymd");
+
+      if($city==null){
+        if($thingname==null){
+          $search_other=MissingData::where('OP_PU_DATE','like','%'.'00000000'.'%')->get();
+        }else{
+          $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                      ->where('OP_AN_CONTENT','like','%'.$thingname.'%')
+                                      ->get();
+        }
+
+      }
+      else{
+        if($thingname==null){
+          $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                      ->where('OP_PU_PLACE','like','%'.$city.'%')
+                                      ->get();
+        }else{
+          $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                      ->where('OP_AN_CONTENT','like','%'.$thingname.'%')
+                                      ->where('OP_PU_PLACE','like','%'.$city.'%')
+                                      ->get();
+        }
+
+      }
+      return view('userprofile', with(['user' => $user, 'search_other' => $search_other]));
     }
+    // whereBetween('OP_PU_DATE',[$date1,$date2])
 
     /**
      * Show the form for creating a new resource.
@@ -40,12 +67,45 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-    $user = Auth::user();
-    $user->subscribe_city = $request->subscribe_city;
-    $user->subscribe_thingname = $request->subscribe_thingname;
-    $user->save();
+      $user = Auth::user();
+      // if($request->subscribe_city != null){
+        $user->subscribe_city = $request->subscribe_city;
+      // }
+      // if($request->subscribe_thingname != null){
+        $user->subscribe_thingname = $request->subscribe_thingname;
+      // }
+      $user->save();
 
-    return view('userprofile', with(['user' => $user]));
+      $user = Auth::user();
+      $city=$user->subscribe_city;
+      $thingname=$user->subscribe_thingname;
+      $nowdate = date("Ymd");
+
+        if($city==null){
+          if($thingname==null){
+            $search_other=MissingData::where('OP_PU_DATE','like','%'.'00000000'.'%')->get();
+          }else{
+            $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                        ->where('OP_AN_CONTENT','like','%'.$thingname.'%')
+                                        ->get();
+          }
+
+        }
+        else{
+          if($thingname==null){
+            $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                        ->where('OP_PU_PLACE','like','%'.$city.'%')
+                                        ->get();
+          }else{
+            $search_other=MissingData::where('OP_PU_DATE','like','%'.$nowdate.'%')
+                                        ->where('OP_AN_CONTENT','like','%'.$thingname.'%')
+                                        ->where('OP_PU_PLACE','like','%'.$city.'%')
+                                        ->get();
+          }
+
+        }
+
+      return view('userprofile', with(['user' => $user , 'search_other' => $search_other ]));
     }
 
     /**

@@ -36,9 +36,40 @@
       </div>
     </div>
   </div>
-
-
 </section>
+
+<?php
+// $url = "https://od.moi.gov.tw/api/v1/rest/datastore/A01010000C-000646-011";
+// $data = file_get_contents($url);
+// $data = json_decode($data, true);
+//
+// $servername = "127.0.0.1";
+// $username = "root";
+// $password = "";
+// $dbname = "fmp";
+//
+// if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+//     echo 'We don\'t have mysqli!!!';
+// } else {
+//     echo 'Phew we have it!';
+// }
+
+
+//
+// $conn = new mysqli($servername, $username, $password, $dbname);
+//
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+// $array_data = $data['result']['records'];
+// foreach ($array_data as $row){
+//   $sql =
+// }
+
+
+?>
+
+
 
 @endsection
 @section('nav_home', 'active')

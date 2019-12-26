@@ -56,6 +56,41 @@
 </section>
 
 <section class="page-section" id="contact">
+  
+  <div class="container">
+  
+    <div class="row justify-content-center">
+  
+      <div class="col-lg-8 text-center">
+  
+        <h2 class="mt-0">{{ $user->name }}的所有懸賞</h2>
+  
+        <hr class="divider my-4">
+  
+        <p class="text-muted mb-5">使用者可在此修改與刪除發布的懸賞</p>
+  
+      </div>
+  
+    </div>
+  
+    <div class="row">
+  
+      <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+
+        @foreach($post_missing_data as $post_missing_data)
+        <div>
+
+        </div>
+  
+      </div>
+    
+    </div>
+  
+  </div>
+
+</section>
+
+<section class="page-section" id="contact">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">

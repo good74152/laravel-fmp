@@ -17,9 +17,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-      $user = Auth::user();
-
-      return view('userprofile', with(['user' => $user]));
+    $user = Auth::user();
+    
+    return view('userprofile', with(['user' => $user]));
     }
 
     /**
@@ -40,12 +40,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-      $user = Auth::user();
-      $user->subscribe_city = $request->subscribe_city;
-      $user->subscribe_thingname = $request->subscribe_thingname;
-      $user->save();
+    $user = Auth::user();
+    $user->subscribe_city = $request->subscribe_city;
+    $user->subscribe_thingname = $request->subscribe_thingname;
+    $user->save();
 
-      return view('userprofile', with(['user' => $user]));
+    return view('userprofile', with(['user' => $user]));
     }
 
     /**

@@ -61,7 +61,7 @@
                 
                 <span class="form-sub-label-container " style="vertical-align:top">
                 
-                    <select type="text" class="form-control" placeholder="ex.106-1" name="location">
+                    <select type="text" class="form-control" placeholder="ex.106-1" name="location" required>
 
                     <option value="">請選擇...</option>
                     <option>臺北市</option>

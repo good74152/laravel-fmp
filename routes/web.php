@@ -37,6 +37,8 @@ Route::post('/bulletin/store/{post_missing_data}', 'CommentController@store')->n
 
 Route::get('/userprofile/{user}', 'UserController@index');
 
-Route::post('/userpofile/subscribe/{user}', 'UserController@store');
+Route::post('/userprofile/subscribe/{user}', 'UserController@store');
+
+Route::delete('/userprofile/delete/{user}', 'PostMissingDataController@destroy')->name('post_missing_data.destroy');
 
 Auth::routes();

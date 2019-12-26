@@ -74,11 +74,28 @@
     </div>
   
     <div class="row">
-  
-      <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
 
-        @foreach($post_missing_data as $post_missing_data)
-        <div>
+      @foreach($post_missing_datas as $post_missing_data)
+      
+      @if ($post_missing_data->user_id == $user->id)
+      
+      <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">懸賞主題 : {{ $post_missing_data->title }}
+      
+        <button type="submit" class="btn btn-primary">修改</button>
+
+        <button type="submit" class="btn btn-primary">
+          
+          <input type="hidden" value="DELETE"/>
+          
+          刪除
+
+        </button>
+
+      </div>
+      
+        @endif
+      
+        @endforeach
 
         </div>
   

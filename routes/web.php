@@ -42,4 +42,6 @@ Route::post('/userprofile/subscribe/{user}', 'UserController@store');
 
 Route::delete('/userprofile/delete/{post_missing_data}', 'PostMissingDataController@destroy');
 
+Route::get('/userpost/edit/{post_missing_data}', 'PostMissingDataController@edit');
+
 Auth::routes();

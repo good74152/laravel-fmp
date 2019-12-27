@@ -83,9 +83,22 @@ class PostMissingDataController extends Controller
      * @param  \App\PostMissingData  $postMissingData
      * @return \Illuminate\Http\Response
      */
-    public function edit(PostMissingData $postMissingData)
+    public function edit($post_missing_data)
     {
-        //
+        $post_missing_data = Post::find($post_missing_data);
+        
+        //Check if post exists before deleting
+        if (!isset($post_missing_data)){
+            return redirect('/posts')->with('error', 'No Post Found');
+        }
+        // Check for correct user
+        if(auth()->user()->id !==$post_missing_data->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+
+
+
+        return view('userpostedit', with(['post_missing_data' => $post_missing_data]));
     }
 
     /**
@@ -95,9 +108,22 @@ class PostMissingDataController extends Controller
      * @param  \App\PostMissingData  $postMissingData
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PostMissingData $postMissingData)
+    public function update(Request $request, $post_missing_data)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required'
+        ]);
+
+        $post_missing_data = PostMissingData::find($post_missing_data);
+        $post_missing_data -> title = $request -> input('title');
+        $post_missing_data -> location = $request -> input('location');
+        $post_missing_data -> description = $request -> input('description');
+
+        $user = Auth::user()->id; 
+
+        return redirect('userprofile/'.$user);
     }
 
     /**

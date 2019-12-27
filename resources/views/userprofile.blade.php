@@ -82,7 +82,15 @@
       
       <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">編號 : {{ $post_missing_data->id }} 發布時間 : {{ $post_missing_data->created_at }} 懸賞主題 : {{ $post_missing_data->title }}  
       
-        <button type="submit" class="btn btn-primary">修改這個懸賞!</button>
+        <form method="POST" action="{{ asset('userpostedit/'.$post_missing_data->id) }}">
+
+          {{ csrf_field() }}
+
+          {{ method_field('post') }}
+        
+          <button type="submit" class="btn btn-primary">修改這個懸賞!</button>
+
+        </form>
 
         <form method="POST" action="{{ asset('/userprofile/delete/'.$post_missing_data->id) }}">
 

@@ -55,6 +55,61 @@
   </div>
 </section>
 
+
+<section class="page-section" id="contact">
+  
+  <div class="container">
+  
+    <div class="row justify-content-center">
+  
+      <div class="col-lg-8 text-center">
+  
+        <h2 class="mt-0">{{ $user->name }}的所有懸賞</h2>
+  
+        <hr class="divider my-4">
+  
+        <p class="text-muted mb-5">使用者可在此修改與刪除發布的懸賞</p>
+  
+      </div>
+  
+    </div>
+  
+    <div class="row">
+
+      @foreach($post_missing_datas as $post_missing_data)
+      
+      @if ($post_missing_data->user_id == $user->id)
+      
+      <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">編號 : {{ $post_missing_data->id }} 發布時間 : {{ $post_missing_data->created_at }} 懸賞主題 : {{ $post_missing_data->title }}  
+      
+        <form method="GET" action="{{ asset('userpostedit/'.$post_missing_data->id) }}">
+        
+          <button type="submit" class="btn btn-primary">修改這個懸賞!</button>
+
+        </form>
+
+        <form method="POST" action="{{ asset('/userprofile/delete/'.$post_missing_data->id) }}">
+
+          {{ csrf_field() }}
+
+          {{ method_field('DELETE') }}
+
+          <button type="submit" class="btn btn-primary">刪除這個懸賞!</button>
+      
+        </form>
+
+      </div>
+
+      @endif
+      
+      @endforeach
+
+    </div>
+  
+  </div>
+    
+</section>
+
 <section class="page-section" id="contact">
   <div class="container">
     <div class="row justify-content-center">

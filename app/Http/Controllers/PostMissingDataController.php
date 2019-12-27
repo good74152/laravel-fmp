@@ -85,7 +85,7 @@ class PostMissingDataController extends Controller
      */
     public function edit($post_missing_data)
     {
-        $post_missing_data = Post::find($post_missing_data);
+        $post_missing_data = PostMissingData::find($post_missing_data);
         
         //Check if post exists before deleting
         if (!isset($post_missing_data)){
@@ -110,6 +110,11 @@ class PostMissingDataController extends Controller
      */
     public function update(Request $request, $post_missing_data)
     {
+        //
+    }
+
+    public function update2(Request $request, $post_missing_data)
+    {
         $this->validate($request, [
             'title' => 'required',
             'location' => 'required',
@@ -120,6 +125,8 @@ class PostMissingDataController extends Controller
         $post_missing_data -> title = $request -> input('title');
         $post_missing_data -> location = $request -> input('location');
         $post_missing_data -> description = $request -> input('description');
+
+        $post_missing_data->save();
 
         $user = Auth::user()->id; 
 

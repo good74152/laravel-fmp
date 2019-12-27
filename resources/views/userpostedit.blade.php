@@ -15,13 +15,13 @@
     
                         <h1 id="header_9" class="form-header text-center" data-component="header">
     
-                            修改懸賞
+                            正在修改懸賞編號:{{$post_missing_data->id}}的內容
     
                         </h1>
     
                         <div id="subHeader_9" class="form-subHeader text-center">
     
-                            會員可以在此修改懸賞
+                            可以在此修改懸賞
     
                         </div>
     
@@ -31,17 +31,18 @@
     
             </li>
     
-        <form method="POST" action="{{route('userpost.store')}}">    
-        @csrf
+        <form method="post" action='{{ asset('/userpostedit/update/'.$post_missing_data->id) }}'>    
+            {{ csrf_field() }}
+
                 <li class="form-line" data-type="control_textbox" id="id_title">
     
-                <label class="form-label form-label-left form-label-auto" id="label_title" for="title"> 懸賞主題 </label>
+                <label class="form-label form-label-left form-label-auto" id="label_title" for="title" > 懸賞主題 </label>
     
                 <div id="cid_title" class="form-input">
     
                     <span class="form-sub-label-container " style="vertical-align:top">
     
-                        <input type="text" id="title" name="title" data-type="input-textbox" class="form-textbox rounded-0" size="64" value="" data-component="textbox" aria-labelledby="label_title sublabel_title" required="required"/>
+                        <input type="text" id="title" value="{{$post_missing_data->title}}" name="title" data-type="input-textbox" class="form-textbox rounded-0" size="64" value="" data-component="textbox" aria-labelledby="label_title sublabel_title" required="required"/>
     
                         <label class="form-sub-label" for="title" id="sublabel_title" style="min-height:13px"> 請填寫懸賞主題 </label>
     
@@ -104,7 +105,7 @@
     
                     <span class="form-sub-label-container " style="vertical-align:top">
     
-                        <textarea id="description" class="md-textarea form-control" name="description" cols="100" rows="10" data-component="textarea" aria-labelledby="label_description sublabel_description" required></textarea>
+                        <textarea  id="description" class="md-textarea form-control" name="description" cols="100" rows="10" data-component="textarea" aria-labelledby="label_description sublabel_description" required>{{$post_missing_data->description}}</textarea>
     
                         <label class="form-sub-label" for="description" id="sublabel_description" style="min-height:13px"> 請填寫懸賞內容 </label>
     

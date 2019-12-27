@@ -12,6 +12,7 @@
 */
 Route::get('/', 'HomeController@index')->name('home');
 Route::pattern('post_missing_data', '[0-9]+'); //限制傳入id為0-9數字
+Route::pattern('user', '[0-9]+');
 /*
 Route::get('/', function () {
   return response()->json([
@@ -38,6 +39,12 @@ Route::post('/bulletin/store/{post_missing_data}', 'CommentController@store')->n
 
 Route::get('/userprofile/{user}', 'UserController@index');
 
-Route::post('/userpofile/subscribe/{user}', 'UserController@store');
+Route::post('/userprofile/subscribe/{user}', 'UserController@store');
+
+Route::delete('/userprofile/delete/{post_missing_data}', 'PostMissingDataController@destroy');
+
+Route::get('/userpostedit/{post_missing_data}', 'PostMissingDataController@edit');
+
+Route::post('/userpostedit/update/{post_missing_data}/', 'PostMissingDataController@update2');
 
 Auth::routes();

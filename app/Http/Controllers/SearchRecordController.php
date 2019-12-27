@@ -46,4 +46,10 @@ class SearchRecordController extends Controller
             return back()
               ->with('search_other',$search_other);
           }
+
+          public function getData(Request $request){
+            return $request->all();
+          }
+
+
 }

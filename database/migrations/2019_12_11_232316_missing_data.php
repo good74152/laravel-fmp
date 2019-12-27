@@ -15,6 +15,7 @@ class MissingData extends Migration
     {
       Schema::create('missing_data', function (Blueprint $table) {
           $table->increments('id');
+          $table->string('OP_AC_RCNO')->nullable();
           $table->string('OP_AC_UNIT_NM1')->nullable();
           $table->string('OP_AC_UNIT_NM2')->nullable();
           $table->string('OP_AC_UNIT_NM3')->nullable();
@@ -31,6 +32,6 @@ class MissingData extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('achievements');
+        Schema::dropIfExists('missing_data');
     }
 }

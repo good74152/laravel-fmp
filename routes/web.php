@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 //搜尋遺失物公開資料記錄
 Route::get('/search_record', 'SearchRecordController@index')->name('home');
+Route::post('/search_record/getdata', 'SearchRecordController@getData');
 
 Route::post('/search_record/search', 'SearchRecordController@search');
 

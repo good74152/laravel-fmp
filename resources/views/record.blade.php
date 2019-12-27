@@ -14,14 +14,14 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-              <label class="control-label col-md-5" required>拾得日期起</label>
-              <label class="control-label col-md-5" required>拾得日期迄</label>
+              <label class="control-label col-md-5">拾得日期起(格式：西元年月日)</label>
+              <label class="control-label col-md-5">拾得日期迄(格式：西元年月日)</label>
               <div class = "row" >
                 <div class="form-group col-md-5">
-                <input type="text" class="form-control glyphicon glyphicon-calendar" placeholder="20190101" name="date1">
+                <input type="text" class="form-control glyphicon glyphicon-calendar" placeholder="20190101" name="date1" required>
               </div><span></span>
                 <div class="form-group col-md-5">
-                <input type="text" class="form-control" placeholder="20191212" name="date2">
+                <input type="text" class="form-control" placeholder="20191212" name="date2" required>
                 </div>
               </div>
             </div>

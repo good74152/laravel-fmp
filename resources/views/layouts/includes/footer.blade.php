@@ -9,9 +9,9 @@
 <script src="{{asset ('app-assets/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset ('app-assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-{{-- <!-- Plugin JavaScript -->
+<!-- Plugin JavaScript -->
 <script src="{{asset ('app-assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-<script src="{{asset ('app-assets/vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script> --}}
+<script src="{{asset ('app-assets/vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
 <!-- Custom scripts for this template -->
 <script src="{{asset ('app-assets/js/creative.min.js')}}"></script>

@@ -56,6 +56,7 @@
         @endforeach
         </table>
     </div>
+    {!! $post_missing_datas->render() !!}
 </div>
 </section>
 <script type="text/javascript">

@@ -17,7 +17,7 @@ class PostMissingDataController extends Controller
      */
     public function index()
     {
-        $post_missing_datas = PostMissingData::paginate(5);
+        $post_missing_datas = PostMissingData::all();
         foreach ($post_missing_datas as $post)
         {
             $post->user_name = User::find($post->user_id)->name;

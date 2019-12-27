@@ -55,7 +55,6 @@
             </tr>
         @endforeach
         </table>
-        {!! $post_missing_datas->render() !!}
     </div>
 </div>
 </section>

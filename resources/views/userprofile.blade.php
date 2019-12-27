@@ -16,14 +16,14 @@
         <div class="mt-5">
           <i class="fas fa-4x fa-gem text-primary mb-4"></i>
           <h3 class="h4 mb-2">姓名</h3>
-          <input type="text" class="form-control" id="" placeholder="{{ $user->name }}" name="username" required>
+          <input type="text" class="form-control" id="" value="{{ $user->name }}" name="username" required>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="mt-5">
           <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
           <h3 class="h4 mb-2">Email</h3>
-          <p class="text-muted mb-0"  style="font-size:24px;">{{ $user->email }}</p>
+          <p class="text-muted mb-0"  style="font-size:24px;" >{{ $user->email }}</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
@@ -46,7 +46,7 @@
       <br>
       <div class="col-md-offset-2 col-md-12">
       <center>
-        <button type="submit" class="btn btn-primary">修改</button>
+        <button type="submit" class="btn btn-primary"></button>
       </center>
       </div>
     </div>

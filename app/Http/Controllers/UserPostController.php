@@ -44,7 +44,7 @@ class UserPostController extends Controller
         $post_missing_data->location = $request->location;
         $post_missing_data->save();
 
-        return redirect('userpost');
+        return redirect('/bulletin');
     }
 
     /**

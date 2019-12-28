@@ -46,7 +46,7 @@
       <br>
       <div class="col-md-offset-2 col-md-12">
       <center>
-        <button type="submit" class="btn btn-primary"></button>
+        <button type="submit" class="btn btn-primary">訂閱</button>
       </center>
       </div>
     </div>

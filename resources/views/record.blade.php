@@ -2,6 +2,8 @@
 @section('content')
 <!-- About Section -->
 <!-- Services Section -->
+
+
 <section class="page-section" id="services">
   <div class="container">
     <h2 class="text-center mt-0">警察機關失物招領網路公告查詢</h2>
@@ -85,7 +87,7 @@
     							<tbody style="background-color:">
     								@foreach ($search_other as $search_others)
     									<a href="#" class="list-group-item">
-                        <h5><b>單位：</b>{{ $search_others->OP_AC_UNIT_NM3 }}</h5>
+                        <h5><b>拾得時間：</b>{{ $search_others->OP_PU_DATE }}<span>&nbsp;&nbsp;&nbsp;</Span><b>單位：</b>{{ $search_others->OP_AC_UNIT_NM3 }}</h5>
     										<h5><b>位置：</b>{{ $search_others->OP_PU_PLACE }}</h5>
     										<h5><b>內容：</b>{{$search_others->OP_AN_CONTENT}}</h5>
     									</a>

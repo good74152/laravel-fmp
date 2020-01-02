@@ -46,7 +46,10 @@ class UserController extends Controller
         }
 
       }
-      return view('userprofile', with(['user' => $user, 'search_other' => $search_other]));
+
+      $post_missing_datas = PostMissingData::all();
+
+      return view('userprofile', with(['user' => $user, 'search_other' => $search_other, 'post_missing_datas' => $post_missing_datas]));
     }
     // whereBetween('OP_PU_DATE',[$date1,$date2])
 

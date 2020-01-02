@@ -79,25 +79,27 @@
       
       @if ($post_missing_data->user_id == $user->id)
       
-      <div class="col-sm-5 col-sm-offset-2 col-md-12 col-md-offset-0 text-center">編號 : {{ $post_missing_data->id }} 發布時間 : {{ $post_missing_data->created_at }} 懸賞主題 : {{ $post_missing_data->title }}  
+        <div class="col-md-8" style="border-left: solid 6px #f4623a ;margin-top: 5px">
+          編號 : {{ $post_missing_data->id }} 發布時間 : {{ $post_missing_data->created_at }} 懸賞主題 : {{ $post_missing_data->title }}  
+        </div>
+        <div class=" col-md-2">
+          <form method="GET" action="{{ asset('userpostedit/'.$post_missing_data->id) }}">
+            <button  type="submit" class="btn btn-primary col-md-12">修改這個懸賞!</button>
+          </form>
+        </div>
+        <div class="col-md-2">
+          <form method="POST" action="{{ asset('/userprofile/delete/'.$post_missing_data->id) }}">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button type="submit" class="btn btn-primary col-md-12">刪除這個懸賞!</button>
+          </form>
+        </div>    
       
-        <form method="GET" action="{{ asset('userpostedit/'.$post_missing_data->id) }}">
+      <br>
+      <br>
+       
         
-          <button type="submit" class="btn btn-primary">修改這個懸賞!</button>
-
-        </form>
-
-        <form method="POST" action="{{ asset('/userprofile/delete/'.$post_missing_data->id) }}">
-
-          {{ csrf_field() }}
-
-          {{ method_field('DELETE') }}
-
-          <button type="submit" class="btn btn-primary">刪除這個懸賞!</button>
-      
-        </form>
-
-      </div>
+     
 
       @endif
       

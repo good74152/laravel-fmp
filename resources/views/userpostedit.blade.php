@@ -15,7 +15,7 @@
     
                         <h1 id="header_9" class="form-header text-center" data-component="header">
     
-                            正在修改懸賞編號:{{$post_missing_data->id}}的內容
+                            正在修改懸賞編號: {{$post_missing_data->id}} 的內容
     
                         </h1>
     
@@ -26,10 +26,11 @@
                         </div>
     
                     </div>
-    
+                    <hr class="divider my-4">
                 </div>
     
             </li>
+          
     
         <form method="post" action='{{ asset('/userpostedit/update/'.$post_missing_data->id) }}'>    
             {{ csrf_field() }}
@@ -42,7 +43,7 @@
     
                     <span class="form-sub-label-container " style="vertical-align:top">
     
-                        <input type="text" id="title" value="{{$post_missing_data->title}}" name="title" data-type="input-textbox" class="form-textbox rounded-0" size="64" value="" data-component="textbox" aria-labelledby="label_title sublabel_title" required="required"/>
+                        <input class="form-control" type="text" id="title" value="{{$post_missing_data->title}}" name="title" data-type="input-textbox" class="form-textbox rounded-0" size="64" value="" data-component="textbox" aria-labelledby="label_title sublabel_title" required="required"/>
     
                         <label class="form-sub-label" for="title" id="sublabel_title" style="min-height:13px"> 請填寫懸賞主題 </label>
     
@@ -121,7 +122,7 @@
     
                     <div style="margin-left:156px" class="form-buttons-wrapper ">
     
-                        <button type="submit" class="form-submit-button">
+                        <button type="submit" class="btn btn-primary">
     
                             確認送出
     

@@ -18,7 +18,7 @@ class SearchRecordController extends Controller
           $date2=$request->date2;
           $place=$request->place;
           $name=$request->name;
-
+          
             if($place==null){
               if($name==null){
                 $search_other=MissingData::whereBetween('OP_PU_DATE',[$date1,$date2])->get();

@@ -20,7 +20,8 @@ class UserController extends Controller
       $user = Auth::user();
       $city=$user->subscribe_city;
       $thingname=$user->subscribe_thingname;
-      $nowdate = date("Ymd");
+      #$nowdate = date("Ymd");
+      $nowdate = 20200102;
 
 
       if($city==null){
@@ -84,8 +85,8 @@ class UserController extends Controller
       $user = Auth::user();
       $city=$user->subscribe_city;
       $thingname=$user->subscribe_thingname;
-      //$nowdate = date("Ymd");
-      $nowdate = 20191226;
+      #$nowdate = date("Ymd");
+      $nowdate = 20200102;
 
 
         if($city==null){
@@ -111,8 +112,10 @@ class UserController extends Controller
           }
 
         }
+        $post_missing_datas = PostMissingData::all();
 
-      return view('userprofile', with(['user' => $user , 'search_other' => $search_other ]));
+        return view('userprofile', with(['user' => $user, 'search_other' => $search_other, 'post_missing_datas' => $post_missing_datas]));
+
     }
 
     /**

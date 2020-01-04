@@ -34,7 +34,7 @@ class PostMissingDataController extends Controller
     public function search(Request $request)
     {
         $title=$request->title;
-        $post_missing_datas = PostMissingData::where('title','like','%'.$title.'%')->get();
+        $post_missing_datas = PostMissingData::where('title','like','%'.$title.'%')->paginate(5);
         foreach ($post_missing_datas as $post)
         {
             $post->user_name = User::find($post->user_id)->name;
@@ -86,7 +86,7 @@ class PostMissingDataController extends Controller
     public function edit($post_missing_data)
     {
         $post_missing_data = PostMissingData::find($post_missing_data);
-        
+
         //Check if post exists before deleting
         if (!isset($post_missing_data)){
             return redirect('/posts')->with('error', 'No Post Found');
@@ -128,7 +128,7 @@ class PostMissingDataController extends Controller
 
         $post_missing_data->save();
 
-        $user = Auth::user()->id; 
+        $user = Auth::user()->id;
 
         return redirect('userprofile/'.$user);
     }
@@ -142,10 +142,10 @@ class PostMissingDataController extends Controller
     public function destroy($post_missing_data) //只傳入$id
     {
         $post_missing_data = PostMissingData::find($post_missing_data);
-        
+
         $post_missing_data -> delete();
 
-        $user = Auth::user()->id; 
+        $user = Auth::user()->id;
 
         return redirect('userprofile/'.$user); //回傳原本頁面
     }
